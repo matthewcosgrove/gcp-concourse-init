@@ -3,8 +3,6 @@
 set -eu
 
 self_dir=$(dirname "${BASH_SOURCE[0]}")
-source $self_dir/local_exports.sh 
-echo TODO: Check/make this idempotent
 
 gcloud auth login
 gcloud config set project ${projectid}
