@@ -3,6 +3,7 @@
 set -eu
 
 self_dir=$(dirname "${BASH_SOURCE[0]}")
+source $self_dir/terraform-prereq-export.sh
 terra_dir_name=terraform-gcp-tmp
 
 terra_dir=$self_dir/$terra_dir_name
