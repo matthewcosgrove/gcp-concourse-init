@@ -31,8 +31,14 @@ Your GCP project needs to be configured with the required service accounts (shou
 
 `./setup-gcloud-service-accounts.sh` which will open up a browser for OAuth2 permissions
 
-You must then enable the Compute Engine API by going to the link in the output of the previous script
+You must then enable the Compute Engine API by going to the link in the output of the previous script. Wait for the enable to complete before moving on the next part.
 
-Then the infrastructure is set up via Terraform
+To complete this part the infrastructure is set up via Terraform
 
 `./create-infra-with-terraform.sh` which will prompt you to review the terraform plan before proceeding to run `terraform apply`
+
+### Set Up a Bosh Director
+
+NOTE: Given the limit on the free tier of 8 cpu the VMs in these scripts are being limited to 1 cpu (this is the only change from the recommended config from the Concourse GCP cpi set up docs)
+
+`./jumpbox/bosh-set-up-scripts.sh`
