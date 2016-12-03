@@ -26,8 +26,10 @@ Add the following exports to .bash_profile or equivalent
 
 ### Set Up GCP
 
-GCP is set up using terraform, and the scripts to run are 
+Your GCP project needs to be configured with the required service accounts (should be a one time set up unless you destroy your project)
 
-1. `./setup-gcloud-for-bosh.sh`
-2. `./terraform-prereq-export.sh`
-3. `./create-infra-with-terraform.sh` which will prompt you to review the terraform plan before proceeding to run `terraform apply`
+`./setup-gcloud-service-accounts.sh`
+
+Then the infrastructure is set up via Terraform
+
+`./create-infra-with-terraform.sh` which will prompt you to review the terraform plan before proceeding to run `terraform apply`
