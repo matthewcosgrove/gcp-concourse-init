@@ -4,7 +4,8 @@
 
 - You must have the terraform CLI installed on your workstation. See [Download Terraform](https://www.terraform.io/downloads.html) for more details.
 - You must have the gcloud CLI installed on your workstation. See https://cloud.google.com/sdk/.
-- Know your preferred GCP region and zones
+- Create a new project from the console https://console.cloud.google.com and note the porject id
+- Choose your preferred GCP region and zones https://cloud.google.com/compute/docs/regions-zones/regions-zones
 
 Scripts referenced below are meant to be run locally and they will ssh onto your gcp jumpbox to run commands remotely. This is so the jumpbox can be torn down and rebuilt easily.
 
@@ -28,7 +29,9 @@ Add the following exports to .bash_profile or equivalent
 
 Your GCP project needs to be configured with the required service accounts (should be a one time set up unless you destroy your project)
 
-`./setup-gcloud-service-accounts.sh`
+`./setup-gcloud-service-accounts.sh` which will open up a browser for OAuth2 permissions
+
+You must then enable the Compute Engine API by going to the link in the output of the previous script
 
 Then the infrastructure is set up via Terraform
 
