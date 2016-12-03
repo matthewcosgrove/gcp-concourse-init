@@ -9,8 +9,8 @@ self_dir=$(dirname "${BASH_SOURCE[0]}")
 source $self_dir/shared-variables.sh
 
 echo $($ssh_bastion "mkdir -p $files_dir")
-echo $(cat shared-variables.sh | $ssh_bastion "cat > ~/shared-variables.sh")
-echo $(cat remote/manifest.yml.erb | $ssh_bastion "cat > ~/$files_dir/manifest.yml.erb")
+echo $(cat $self_dir/shared-variables.sh | $ssh_bastion "cat > ~/shared-variables.sh")
+echo $(cat $self_dir/remote/manifest.yml.erb | $ssh_bastion "cat > ~/$files_dir/manifest.yml.erb")
 
-echo $($ssh_bastion $env_vars 'bash -s' < remote/bosh-set-up.sh)
+echo $($ssh_bastion $env_vars 'bash -s' < $self_dir/remote/bosh-set-up.sh)
 

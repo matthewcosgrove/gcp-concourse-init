@@ -41,4 +41,6 @@ To complete this part the infrastructure is set up via Terraform
 
 NOTE: Given the limit on the free tier of 8 cpu the VMs in these scripts are being limited to 1 cpu (this is the only change from the recommended config from the Concourse GCP cpi set up docs)
 
+For a new GCP project, new ssh keys will be required. You will be prompted accordingly
+
 `./jumpbox/bosh-set-up-scripts.sh`
