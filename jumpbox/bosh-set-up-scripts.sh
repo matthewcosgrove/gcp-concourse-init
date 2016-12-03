@@ -5,11 +5,12 @@ set -eu
 
 env_vars="GCP_CONCOURSE_ZONE_2=$GCP_CONCOURSE_ZONE_2"
 
-source shared-variables.sh
+self_dir=$(dirname "${BASH_SOURCE[0]}")
+source $self_dir/shared-variables.sh
 
 echo $($ssh_bastion "mkdir -p $files_dir")
 echo $(cat shared-variables.sh | $ssh_bastion "cat > ~/shared-variables.sh")
-echo $(cat manifest.yml.erb | $ssh_bastion "cat > ~/$files_dir/manifest.yml.erb")
+echo $(cat remote/manifest.yml.erb | $ssh_bastion "cat > ~/$files_dir/manifest.yml.erb")
 
-echo $($ssh_bastion $env_vars 'bash -s' < bosh-set-up.sh)
+echo $($ssh_bastion $env_vars 'bash -s' < remote/bosh-set-up.sh)
 
