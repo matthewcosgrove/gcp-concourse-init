@@ -16,5 +16,4 @@ gcloud iam service-accounts keys create /tmp/terraform-bosh.key.json \
 gcloud projects add-iam-policy-binding ${projectid} \
     --member serviceAccount:terraform-bosh@${projectid}.iam.gserviceaccount.com \
     --role roles/editor
-# Make your service account's key available in an environment variable to be used by terraform
-export GOOGLE_CREDENTIALS=$(cat /tmp/terraform-bosh.key.json)
+

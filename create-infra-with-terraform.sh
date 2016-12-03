@@ -9,7 +9,7 @@ terra_dir_name=terraform-gcp-tmp
 terra_dir=$self_dir/$terra_dir_name
 mkdir -p $terra_dir
 pushd $terra_dir
-echo "Getting .tf files"
+echo "Getting .tf files. NOTE: variables will be overridden e.g. -var projectid=${projectid}"
 wget -nc https://raw.githubusercontent.com/cloudfoundry-incubator/bosh-google-cpi-release/master/docs/concourse/main.tf
 wget -nc https://raw.githubusercontent.com/cloudfoundry-incubator/bosh-google-cpi-release/master/docs/concourse/concourse.tf
 
