@@ -3,6 +3,7 @@
 set -eu
 
 self_dir=$(dirname "${BASH_SOURCE[0]}")
+source $self_dir/gcp-prereq-export.sh
 
 gcloud auth login
 gcloud config set project ${projectid}
