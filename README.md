@@ -4,7 +4,7 @@
 
 - You must have the terraform CLI installed on your workstation. See [Download Terraform](https://www.terraform.io/downloads.html) for more details.
 - You must have the gcloud CLI installed on your workstation. See https://cloud.google.com/sdk/.
-- Create a new project from the console https://console.cloud.google.com and note the porject id
+- Create a new project from the console https://console.cloud.google.com and note the project id
 - Choose your preferred GCP region and zones https://cloud.google.com/compute/docs/regions-zones/regions-zones
 
 Scripts referenced below are meant to be run locally and they will ssh onto your gcp jumpbox to run commands remotely. This is so the jumpbox can be torn down and rebuilt easily.
