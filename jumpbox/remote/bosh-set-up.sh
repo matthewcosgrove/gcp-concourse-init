@@ -21,7 +21,7 @@ export project_id=`curl -s -H "Metadata-Flavor: Google" http://metadata.google.i
 export zone2=$GCP_CONCOURSE_ZONE_2
 gcloud config list
 
-pushd $files_dir
+pushd $files_dir > /dev/null
 erb manifest.yml.erb > manifest.yml
-popd
+popd > /dev/null
 printf '%s\n' "Successfully generated manifest in $files_dir"
