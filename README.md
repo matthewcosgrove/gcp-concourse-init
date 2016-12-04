@@ -41,6 +41,9 @@ To complete this part the infrastructure is set up via Terraform
 
 NOTE: Given the limit on the free tier of 8 cpu the VMs in these scripts are being limited to 1 cpu (this is the only change from the recommended config from the Concourse GCP cpi set up docs)
 
-For a new GCP project, new ssh keys will be required. You will be prompted accordingly
+For a new GCP project, ssh keys will be required to be generated. You will be prompted accordingly where
+
+1. When given a warning that "You do not have an SSH key for Google Compute Engine", you should choose a passphrase and allow a new key to be generated. This will generate a local key/pair named google_compute_engine/google_compute_engine.pub and upload the public key to your account
+2. TBC
 
 `./jumpbox/bosh-set-up-scripts.sh`
