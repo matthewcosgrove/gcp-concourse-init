@@ -23,5 +23,7 @@ gcloud config list
 
 pushd $files_dir > /dev/null
 erb manifest.yml.erb > manifest.yml
+bosh-init deploy manifest.yml
+bosh target 10.0.0.6
 popd > /dev/null
 printf '%s\n' "Successfully generated manifest in $files_dir"
